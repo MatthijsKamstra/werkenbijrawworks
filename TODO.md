@@ -9,16 +9,22 @@ MVP / POC
 - [x] add uitleg pagina
 - [ ] cookies gebruiken (lib?)
 - [ ] cookies gebruiken (zelf schrijven quickfix)
-- [ ]
+- [ ] landing/actie pagina
 - [ ]
 - [ ]
 - [ ]
 - [ ]
 
-## install
+## Install
 
 - js-sha256 <https://www.npmjs.com/package/js-sha256>
 - qrcode-svg <https://www.npmjs.com/package/qrcode-svg>
+
+```bash
+npm install ngx-cookie --save
+# or
+yarn add ngx-cookie
+```
 
 ```bash
 npm i --save-dev @types/qrcode-svg
