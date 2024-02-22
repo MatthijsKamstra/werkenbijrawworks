@@ -2,12 +2,56 @@
 
 <section class="container">
 	<h2>{{this.title}}</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ex orci. Phasellus magna ante, ullamcorper non
-		leo in, fermentum efficitur felis. Donec vitae mattis erat. Sed vel odio arcu. Praesent porta nulla et sapien
-		interdum, id placerat leo semper. Mauris eget consequat sem. Suspendisse tincidunt et est sit amet laoreet.
-		Vivamus nec rutrum enim. In malesuada nibh non tempor imperdiet. In dignissim, felis in tincidunt consequat,
-		metus augue euismod diam, ut eleifend turpis nisi vitae ipsum. Nulla mattis, magna at convallis mattis, sem
-		justo viverra ligula, maximus dignissim dolor nunc id arcu. Nullam auctor, ligula ac cursus lobortis, sapien
-		mauris lacinia felis, in ultrices mi dolor quis arcu. Vivamus iaculis tincidunt lobortis. In hac habitasse
-		platea dictumst.</p>
+	<p>
+		Welkom bij onze spannende Scavenger Hunt met QR-codes!
+	</p>
+	<p>
+
+		Ben je klaar voor een avontuurlijke speurtocht vol intriges en uitdagingen? Je staat op het punt om deel te
+		nemen aan
+		een opwindende zoektocht waarbij je drie QR-codes moet vinden die verspreid liggen over dit terrein.
+	</p>
+	<p>
+
+		Bereid je voor om je speurneus te gebruiken, want deze codes zullen niet zomaar voor het oprapen liggen! Verken
+		alle
+		hoeken en gaten, kijk goed om je heen en wees niet bang om een beetje creatief te zijn in je zoektocht.
+
+	</p>
+	<p>
+		Als je eenmaal een QR-code hebt gevonden, scan deze dan met je smartphone om een aanwijzing te ontgrendelen die
+		je
+		verder zal leiden naar de volgende uitdaging. Vergeet niet om samen te werken met je mede-speurders, want
+		teamwork kan
+		de sleutel zijn tot succes!
+	</p>
+
+	<p>
+		Veel geluk en veel plezier met het verkennen van onze Scavenger Hunt. Moge de jacht beginnen!
+	</p>
+
+	<!--
+	<div class="row">
+		<div class="col text-center"><span class="bignumber">1</span></div>
+		<div class="col text-center"><span class="bignumber">2</span></div>
+		<div class="col text-center"><span class="bignumber">3</span></div>
+	</div> -->
+
+	<div class="my-5">
+		<div class="progress" role="progressbar" aria-label="Basic example" attr.aria-valuenow="{{getPrecentage()}}"
+			aria-valuemin="0" attr.aria-valuemax="{{getPrecentage()}}" style="height: 50px">
+			<div class="progress-bar progress-bar-striped progress-bar-animated"
+				attr.style="width: {{getPrecentage()}}%">{{getPrecentage()}}%</div>
+		</div>
+	</div>
+
+
+	<div *ngIf="this.personData">
+		<h3>{{this.personData.name}}</h3>
+		<p>Je hebt gesproken met <strong>{{this.personData.name}}</strong></p>
+		<p>{{this.personData.role}}</p>
+		<p>{{this.personData.company}}</p>
+
+	</div>
+
 </section>

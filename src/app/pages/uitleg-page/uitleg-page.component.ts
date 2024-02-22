@@ -3,8 +3,6 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import * as QRCode from "qrcode-svg";
 import { EnvironmentService } from 'src/app/services/environment.service';
 import { Constants } from 'src/app/shared/constants/constants';
-import { IFakeDatabase } from 'src/app/shared/interfaces/i-fakedatabase';
-import { IUser } from 'src/app/shared/interfaces/i-user';
 
 @Component({
   selector: 'app-uitleg-page',
@@ -14,9 +12,6 @@ import { IUser } from 'src/app/shared/interfaces/i-user';
 export class UitlegPageComponent implements OnInit {
 
   title: string = 'Uitleg';
-
-  _IFakeDatabase!: IFakeDatabase;
-  users!: IUser[];
 
   constructor(
     private sanitizer: DomSanitizer,

@@ -1,5 +1,6 @@
 // Angular Modules
 import { Injectable } from '@angular/core';
+import { IData } from '../interfaces/i-data';
 
 @Injectable({
 	providedIn: 'root'
@@ -7,6 +8,26 @@ import { Injectable } from '@angular/core';
 export class Constants {
 
 	public static URL: string = 'https://matthijskamstra.github.io/werkenbijrawworks';
+
+	public static DATA: IData = {
+		hande: {
+			name: 'Hande Depeli',
+			role: "Recruitment Business Partner",
+			company: "INTERSTELLAR"
+		},
+		matthijs: {
+			name: 'Matthijs Kamstra',
+			role: "Tribe Lead Modern Software Engineers | 🦄",
+			company: "RawWorks"
+		},
+		rollup: {
+			name: 'Rollup',
+			role: "",
+			company: "INTERSTELLAR"
+		}
+	};
+
+
 
 
 	public readonly API_ENDPOINT: string = 'domain/api';
