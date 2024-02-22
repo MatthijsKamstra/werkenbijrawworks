@@ -5,10 +5,15 @@
 	<p class="alert alert-danger">Om dit concept te kunnen testen is deze pagina zichtbaar. Het zou het natuurlijk
 		"raar" zijn om gebruikers op deze manier te ontsluiten!</p>
 
+	<p>
+
+	</p>
 
 	<div class="row">
 		<div class="col-4 text-center">
-			<div [innerHTML]="this.convert2QR('hande')"></div>
+			<a href="{{this.toUserUrl('hande')}}">
+				<div [innerHTML]="this.convert2QR('hande')"></div>
+			</a>
 
 			<p>
 				<strong>Hande Depeli</strong>
@@ -19,7 +24,9 @@
 			</p>
 		</div>
 		<div class="col-4 text-center">
-			<div [innerHTML]="this.convert2QR('matthijs')"></div>
+			<a href="{{this.toUserUrl('matthijs')}}">
+				<div [innerHTML]="this.convert2QR('matthijs')"></div>
+			</a>
 
 			<p>
 				<strong>Matthijs Kamstra</strong>
@@ -30,7 +37,9 @@
 			</p>
 		</div>
 		<div class="col-4 text-center">
-			<div [innerHTML]="this.convert2QR('rollup')"></div>
+			<a href="{{this.toUserUrl('rollup')}}">
+				<div [innerHTML]="this.convert2QR('rollup')"></div>
+			</a>
 			<p>
 				<strong>Rollup</strong>
 				<br />

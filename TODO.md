@@ -7,9 +7,8 @@ MVP / POC
 - [x] create qr codes
 - [x] qr code lib
 - [x] add uitleg pagina
-- [ ] cookies gebruiken (lib?)
-- [ ] cookies gebruiken (zelf schrijven quickfix)
-- [ ] landing/actie pagina
+- [x] cookies gebruiken (lib?)
+- [x] landing/actie pagina
 - [ ]
 - [ ]
 - [ ]
@@ -19,11 +18,14 @@ MVP / POC
 
 - js-sha256 <https://www.npmjs.com/package/js-sha256>
 - qrcode-svg <https://www.npmjs.com/package/qrcode-svg>
+- https://www.npmjs.com/package/ngx-cookie-service
+- https://github.com/stevermeister/ngx-cookie-service
 
 ```bash
-npm install ngx-cookie --save
+npm i ngx-cookie-service
+npm i ngx-cookie-service@15.0.0
 # or
-yarn add ngx-cookie
+yarn add ngx-cookie-service
 ```
 
 ```bash

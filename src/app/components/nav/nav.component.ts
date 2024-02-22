@@ -7,7 +7,6 @@ import { testRoutes } from "../../routes/test.route";
 import { navigationRoutes } from 'src/app/routes/navigation.route';
 import { EnvironmentService } from 'src/app/services/environment.service';
 import { SecurityService } from 'src/app/services/security.service';
-import { environment } from 'src/environments/environment';
 import { pagesRoutes } from "../../routes/pages.route";
 
 @Component({

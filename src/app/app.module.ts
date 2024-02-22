@@ -15,7 +15,9 @@ import { IconsComponent } from './elements/icons/icons.component';
 import { LoginDropdownComponent } from './elements/login-dropdown/login-dropdown.component';
 import { ProfileDropdownComponent } from './elements/profile-dropdown/profile-dropdown.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { ActiePageComponent } from './pages/actie-page/actie-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LogoutPageComponent } from './pages/logout-page/logout-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
@@ -51,6 +53,8 @@ import { DebugDirective } from './shared/directives/debug.directive';
     StyleguideComponent,
     UitlegPageComponent,
     WipPageComponent,
+    ActiePageComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
