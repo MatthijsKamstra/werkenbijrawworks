@@ -1,3 +1,3 @@
 export interface ICookie {
-	name: string;
+	data: string[];
 }

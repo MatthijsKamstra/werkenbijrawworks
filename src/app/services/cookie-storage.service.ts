@@ -39,8 +39,12 @@ export class CookieStorageService {
     this.cookieService.set(key, JSON.stringify(value));
   }
 
-  getObject(key: string): object {
-    let data: string = JSON.stringify(this.cookieService.get(key));
+  getObject(key: string): object | null {
+    // let data: string = JSON.stringify(this.cookieService.get(key));
+    let data: string = this.cookieService.get(key);
+    if (!data) {
+      return null;
+    }
     return JSON.parse(data);
   }
 }

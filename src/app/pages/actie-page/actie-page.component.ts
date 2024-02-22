@@ -19,48 +19,72 @@ export class ActiePageComponent implements OnInit {
 
   id!: string | null;
 
+  // check
   names: string[] = ['hande', 'matthijs', 'rollup'];
+
+  // raw data
   data: IData = Constants.DATA;
 
   personData!: IPersonData;
 
-  percentage: number;
+
+  DEFAULT_COOKIE: ICookie = {
+    data: []
+  }
+  cookie: ICookie;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private cookieStorageService: CookieStorageService
+    private cookieStorageService: CookieStorageService,
+
   ) {
-    this.percentage = this.getPrecentage();
+    this.cookie = (this.cookieStorageService.getObject(this.storageKey) as ICookie) ? this.cookieStorageService.getObject(this.storageKey) as ICookie : this.DEFAULT_COOKIE
+    console.log(this.cookie);
   }
 
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id') as string;
+    if (!this.id) {
+      console.warn('niet op de juiste manier hier gekomen');
+      this.router.navigate(['/']);
+      return;
+    }
     console.log(this.id);
+    // else {
+    //   let obj: ICookie = this.cookieStorageService.getObject(this.storageKey) as ICookie;
+    //   if (obj) {
+    //     console.log(obj);
 
-    // // @ts-ignore
-    // console.log(this.data[this.id]);
-
-    // @ts-ignore
-    this.personData = this.data[this.id] as IPersonData;
-    // console.log(this.personData);
+    //   }
+    // }
 
     if (this.names.includes(this.id)) {
       console.log(`${this.id} is in the array.`);
+      // // @ts-ignore
+      // console.log(this.data[this.id]);
+      // @ts-ignore
+      this.personData = this.data[this.id] as IPersonData;
+      // console.log(this.personData);
+
+      // this.cookie = this.cookieStorageService.getObject(this.storageKey) as ICookie;
+
+      console.log(this.cookie);
+      console.log(this.cookie.data);
+
+      if (!this.cookie.data.includes(this.id)) {
+        this.cookie.data.push(this.id);
+        this.cookieStorageService.setObject(this.storageKey, this.cookie);
+      }
+
+
+
     } else {
       console.log(`${this.id} is not in the array.`);
     }
 
-    if (!this.id) {
-      console.warn('niet op de juiste manier hier gekomen');
-    } else {
-      let obj: ICookie = this.cookieStorageService.getObject(this.storageKey) as ICookie;
-      if (obj) {
-        console.log(obj);
 
-      }
-    }
 
     // this.debug();
   }
@@ -71,19 +95,25 @@ export class ActiePageComponent implements OnInit {
   }
 
 
-  getPrecentage(): number {
-    return 75;
+  getPercentage(): number {
+    let percentage = Math.round((this.cookie.data.length / this.names.length) * 100);
+    return percentage;
   }
 
+  // ____________________________________ debug ____________________________________
 
   debug() {
-    console.log(this.cookieStorageService.getObject(this.storageKey));
     let obj = {
       data:
         ["matthijs", "hande"]
     };
     this.cookieStorageService.setObject(this.storageKey, obj);
   }
+
+  onDebugHandler() {
+    this.cookieStorageService.clear();
+  }
+
 
 
 }

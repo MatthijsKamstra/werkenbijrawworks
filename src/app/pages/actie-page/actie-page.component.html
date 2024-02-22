@@ -2,33 +2,59 @@
 
 <section class="container">
 	<h2>{{this.title}}</h2>
-	<p>
-		Welkom bij onze spannende Scavenger Hunt met QR-codes!
-	</p>
-	<p>
 
-		Ben je klaar voor een avontuurlijke speurtocht vol intriges en uitdagingen? Je staat op het punt om deel te
-		nemen aan
-		een opwindende zoektocht waarbij je drie QR-codes moet vinden die verspreid liggen over dit terrein.
-	</p>
-	<p>
 
-		Bereid je voor om je speurneus te gebruiken, want deze codes zullen niet zomaar voor het oprapen liggen! Verken
-		alle
-		hoeken en gaten, kijk goed om je heen en wees niet bang om een beetje creatief te zijn in je zoektocht.
+	<div *ngIf="this.cookie.data.length >= 3">
+		<img src="/assets/images/scavengerhunt.jpeg" width="100%" alt="reward">
+	</div>
 
-	</p>
-	<p>
-		Als je eenmaal een QR-code hebt gevonden, scan deze dan met je smartphone om een aanwijzing te ontgrendelen die
-		je
-		verder zal leiden naar de volgende uitdaging. Vergeet niet om samen te werken met je mede-speurders, want
-		teamwork kan
-		de sleutel zijn tot succes!
-	</p>
+	<div *ngIf="this.cookie.data.length< 3">
+		<p>
+			Welkom bij onze spannende Scavenger Hunt met QR-codes!
+		</p>
+		<p>
 
-	<p>
-		Veel geluk en veel plezier met het verkennen van onze Scavenger Hunt. Moge de jacht beginnen!
-	</p>
+			Ben je klaar voor een avontuurlijke speurtocht vol intriges en uitdagingen? Je staat op het punt om deel te
+			nemen aan
+			een opwindende zoektocht waarbij je drie QR-codes moet vinden die verspreid liggen over dit terrein.
+		</p>
+		<p>
+
+			Bereid je voor om je speurneus te gebruiken, want deze codes zullen niet zomaar voor het oprapen liggen!
+			Verken
+			alle
+			hoeken en gaten, kijk goed om je heen en wees niet bang om een beetje creatief te zijn in je zoektocht.
+
+		</p>
+		<p>
+			Als je eenmaal een QR-code hebt gevonden, scan deze dan met je smartphone om een aanwijzing te ontgrendelen
+			die
+			je
+			verder zal leiden naar de volgende uitdaging. Vergeet niet om samen te werken met je mede-speurders, want
+			teamwork kan
+			de sleutel zijn tot succes!
+		</p>
+
+		<p>
+			Veel geluk en veel plezier met het verkennen van onze Scavenger Hunt. Moge de jacht beginnen!
+		</p>
+
+	</div>
+
+	<div debug>
+
+		<div class="hstack gap-1">
+			<button class="btn btn-danger" (click)="onDebugHandler()">debug</button>
+			<a class="btn btn-danger" href="/uitleg">Uitleg</a>
+		</div>
+
+
+		<p class="mb-0">
+			percentage: {{getPercentage()}}%<br />
+			this.cookie: {{this.cookie|json}}<br />
+		</p>
+	</div>
+
 
 	<!--
 	<div class="row">
@@ -38,10 +64,10 @@
 	</div> -->
 
 	<div class="my-5">
-		<div class="progress" role="progressbar" aria-label="Basic example" attr.aria-valuenow="{{getPrecentage()}}"
-			aria-valuemin="0" attr.aria-valuemax="{{getPrecentage()}}" style="height: 50px">
+		<div class="progress" role="progressbar" aria-label="Basic example" attr.aria-valuenow="{{getPercentage()}}"
+			aria-valuemin="0" attr.aria-valuemax="{{getPercentage()}}" style="height: 50px">
 			<div class="progress-bar progress-bar-striped progress-bar-animated"
-				attr.style="width: {{getPrecentage()}}%">{{getPrecentage()}}%</div>
+				attr.style="width: {{getPercentage()}}%">{{getPercentage()}}%</div>
 		</div>
 	</div>
 
