@@ -1,0 +1,45 @@
+<app-hero-visual img="https://picsum.photos/id/26/1024/400/"></app-hero-visual>
+
+<section class="container">
+	<h2>{{this.title}}</h2>
+	<p class="alert alert-danger">Om dit concept te kunnen testen is deze pagina zichtbaar. Het zou het natuurlijk
+		"raar" zijn om gebruikers op deze manier te ontsluiten!</p>
+
+
+	<div class="row">
+		<div class="col-4 text-center">
+			<div [innerHTML]="this.convert2QR('hande')"></div>
+
+			<p>
+				<strong>Hande Depeli</strong>
+				<br />
+				Recruitment Business Partner
+				<br />
+				<i>INTERSTELLAR</i>
+			</p>
+		</div>
+		<div class="col-4 text-center">
+			<div [innerHTML]="this.convert2QR('matthijs')"></div>
+
+			<p>
+				<strong>Matthijs Kamstra</strong>
+				<br />
+				Tribe Lead Modern Software Engineers | 🦄
+				<br />
+				<i>RawWorks</i>
+			</p>
+		</div>
+		<div class="col-4 text-center">
+			<div [innerHTML]="this.convert2QR('rollup')"></div>
+			<p>
+				<strong>Rollup</strong>
+				<br />
+				<br />
+				<i>
+					INTERSTELLAR
+				</i>
+			</p>
+		</div>
+	</div>
+
+</section>
