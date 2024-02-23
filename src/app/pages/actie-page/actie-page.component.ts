@@ -13,6 +13,7 @@ import { IData, IPersonData } from 'src/app/shared/interfaces/i-data';
 })
 export class ActiePageComponent implements OnInit {
 
+
   title = "Actie";
 
   private storageKey = 'werkenbyrawworks2024';
@@ -114,6 +115,11 @@ export class ActiePageComponent implements OnInit {
     this.cookieStorageService.clear();
   }
 
+
+  onResetCookieHandler() {
+    this.cookieStorageService.clear();
+    this.router.navigate(['/']);
+  }
 
 
 }
