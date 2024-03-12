@@ -38,12 +38,10 @@ export class ActiePageComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private cookieStorageService: CookieStorageService,
-
   ) {
     this.cookie = (this.cookieStorageService.getObject(this.storageKey) as ICookie) ? this.cookieStorageService.getObject(this.storageKey) as ICookie : this.DEFAULT_COOKIE
-    console.log(this.cookie);
+    // console.log(this.cookie);
   }
-
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id') as string;
@@ -53,14 +51,6 @@ export class ActiePageComponent implements OnInit {
       return;
     }
     console.log(this.id);
-    // else {
-    //   let obj: ICookie = this.cookieStorageService.getObject(this.storageKey) as ICookie;
-    //   if (obj) {
-    //     console.log(obj);
-
-    //   }
-    // }
-
     if (this.names.includes(this.id)) {
       console.log(`${this.id} is in the array.`);
       // // @ts-ignore
@@ -78,23 +68,13 @@ export class ActiePageComponent implements OnInit {
         this.cookie.data.push(this.id);
         this.cookieStorageService.setObject(this.storageKey, this.cookie);
       }
-
-
-
     } else {
       console.log(`${this.id} is not in the array.`);
     }
-
-
-
-    // this.debug();
   }
-
 
   storeData(name: string) {
-
   }
-
 
   getPercentage(): number {
     let percentage = Math.round((this.cookie.data.length / this.names.length) * 100);
@@ -115,11 +95,9 @@ export class ActiePageComponent implements OnInit {
     this.cookieStorageService.clear();
   }
 
-
   onResetCookieHandler() {
     this.cookieStorageService.clear();
     this.router.navigate(['/']);
   }
-
 
 }
